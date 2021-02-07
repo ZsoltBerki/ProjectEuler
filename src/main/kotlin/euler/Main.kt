@@ -2,11 +2,12 @@
 package euler
 
 import euler.utils.generateFibonacci
+import euler.utils.getLargestPrimeFactor
 import euler.utils.getMultipliesOf
 
 fun main() {
     println("Hello, Euler!")
-    task2()
+    task3()
 }
 
 /**
@@ -36,5 +37,16 @@ fun task2() {
     val result = generateFibonacci(threshold)
         .filter { it % 2 == 0 }
         .sum()
+    println("The result is $result")
+}
+
+/**
+ * The prime factors of 13195 are 5, 7, 13 and 29.
+ * What is the largest prime factor of the number 600851475143 ?
+ */
+fun task3() {
+    println("Task 3")
+    val targetNumber = 600851475143
+    val result = getLargestPrimeFactor(targetNumber)
     println("The result is $result")
 }
