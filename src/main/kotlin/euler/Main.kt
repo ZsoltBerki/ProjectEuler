@@ -1,13 +1,14 @@
 @file:JvmName("Main")
 package euler
 
+import euler.utils.findLargestPalindrome
 import euler.utils.generateFibonacci
 import euler.utils.getLargestPrimeFactor
 import euler.utils.getMultipliesOf
 
 fun main() {
     println("Hello, Euler!")
-    task3()
+    task4()
 }
 
 /**
@@ -48,5 +49,16 @@ fun task3() {
     println("Task 3")
     val targetNumber = 600851475143
     val result = getLargestPrimeFactor(targetNumber)
+    println("The result is $result")
+}
+
+/**
+ * A palindromic number reads the same both ways.
+ * The largest palindrome made from the product of two 2-digit numbers is 9009 = 91 × 99.
+ * Find the largest palindrome made from the product of two 3-digit numbers.
+ */
+fun task4() {
+    println("Task 4")
+    val result = findLargestPalindrome(3)
     println("The result is $result")
 }

@@ -5,7 +5,7 @@ package euler.utils
  * @currentSequence is the current fibonacci sequence
  */
 fun getNextFibonacciValue(currentSequence: List<Int>): Int {
-    return when(val listSize = currentSequence.size) {
+    return when (val listSize = currentSequence.size) {
         0 -> 1
         1 -> 2
         else -> currentSequence[listSize - 2] + currentSequence[listSize - 1]
@@ -19,5 +19,6 @@ fun getNextFibonacciValue(currentSequence: List<Int>): Int {
 fun generateFibonacci(threshold: Int): List<Int> {
     return generateList(
         isReady = { _: List<Int>, nextElement: Int -> nextElement > threshold },
-        getNextElement = ::getNextFibonacciValue)
+        getNextElement = ::getNextFibonacciValue
+    )
 }

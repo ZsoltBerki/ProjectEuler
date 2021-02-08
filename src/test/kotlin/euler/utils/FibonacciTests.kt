@@ -10,9 +10,9 @@ class FibonacciTests {
     fun testNextValue() {
         assertEquals(1, getNextFibonacciValue(listOf()), "Does not work for empty list.")
         assertEquals(2, getNextFibonacciValue(listOf(1)), "Does not work for single element list.")
-        assertEquals(3, getNextFibonacciValue(listOf(1,2)), "Value is incorrect")
-        assertEquals(5, getNextFibonacciValue(listOf(1,2,3)), "Value is incorrect")
-        assertEquals(8, getNextFibonacciValue(listOf(1,2,3,5)), "Value is incorrect")
+        assertEquals(3, getNextFibonacciValue(listOf(1, 2)), "Value is incorrect")
+        assertEquals(5, getNextFibonacciValue(listOf(1, 2, 3)), "Value is incorrect")
+        assertEquals(8, getNextFibonacciValue(listOf(1, 2, 3, 5)), "Value is incorrect")
     }
 
     @Test

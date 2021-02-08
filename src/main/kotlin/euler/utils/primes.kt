@@ -12,8 +12,8 @@ fun getLargestPrimeFactor(ofNumber: Long): Int {
     val lookForAnotherPrimeFactor = { potentialPrimeFactor++ }
     val hasMorePrimes = { number > 1 }
 
-    while(hasMorePrimes()) {
-        when(isPrimeFactor()) {
+    while (hasMorePrimes()) {
+        when (isPrimeFactor()) {
             true -> reduceNumber()
             false -> lookForAnotherPrimeFactor()
         }

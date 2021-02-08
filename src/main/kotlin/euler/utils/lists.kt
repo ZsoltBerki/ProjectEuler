@@ -5,13 +5,13 @@ package euler.utils
  * @isReady a function that takes the current list and the next element and returns true when the list generation is ready.
  * @getNextElement a function that takes the current list and generates the next element
  */
-fun <T>generateList(
+fun <T> generateList(
     isReady: (currentList: List<T>, nextElement: T) -> Boolean,
-    getNextElement: (currentList: List<T>) -> T): List<T>
-{
+    getNextElement: (currentList: List<T>) -> T
+): List<T> {
     val list = emptyList<T>().toMutableList()
     var nextElement = getNextElement(list)
-    while(!isReady(list, nextElement)) {
+    while (!isReady(list, nextElement)) {
         list.add(nextElement)
         nextElement = getNextElement(list)
     }
