@@ -6,10 +6,12 @@ import euler.utils.generateFibonacci
 import euler.utils.getLargestPrimeFactor
 import euler.utils.getMultipliesOf
 import euler.utils.getSmallestEvenlyDivisible
+import euler.utils.getSquareOfSums
+import euler.utils.getSumOfSquares
 
 fun main() {
     println("Hello, Euler!")
-    task5()
+    task6()
 }
 
 /**
@@ -72,5 +74,17 @@ fun task5() {
     println("Task 5")
     val dividers = (2L..20L).toList()
     val result = getSmallestEvenlyDivisible(dividers)
+    println("The result is $result")
+}
+
+/**
+ * Find the difference between the sum of the squares of the first one hundred natural numbers and the square of the sum.
+ */
+fun task6() {
+    println("Task 6")
+    val numbers = (1..100).toList().map { it.toFloat() }
+    val sumOfSquares = getSumOfSquares(numbers)
+    val squareOfSums = getSquareOfSums(numbers)
+    val result = (squareOfSums - sumOfSquares).toLong()
     println("The result is $result")
 }
