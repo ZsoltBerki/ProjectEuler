@@ -5,10 +5,11 @@ import euler.utils.findLargestPalindrome
 import euler.utils.generateFibonacci
 import euler.utils.getLargestPrimeFactor
 import euler.utils.getMultipliesOf
+import euler.utils.getSmallestEvenlyDivisible
 
 fun main() {
     println("Hello, Euler!")
-    task4()
+    task5()
 }
 
 /**
@@ -60,5 +61,16 @@ fun task3() {
 fun task4() {
     println("Task 4")
     val result = findLargestPalindrome(3)
+    println("The result is $result")
+}
+
+/**
+ * 2520 is the smallest number that can be divided by each of the numbers from 1 to 10 without any remainder.
+ * What is the smallest positive number that is evenly divisible by all of the numbers from 1 to 20?
+ */
+fun task5() {
+    println("Task 5")
+    val dividers = (2L..20L).toList()
+    val result = getSmallestEvenlyDivisible(dividers)
     println("The result is $result")
 }

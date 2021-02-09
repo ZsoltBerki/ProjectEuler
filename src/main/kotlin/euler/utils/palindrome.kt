@@ -25,19 +25,19 @@ fun isPalindrome(number: Long): Boolean {
  */
 fun findLargestPalindrome(digits: Int): Long {
     val lowerBoundary = (10f).pow(digits - 1).toLong()
-    val upperBoundary = ((10f).pow(digits) -1).toLong()
-    val rangeOfNumbers = lowerBoundary .. upperBoundary
+    val upperBoundary = ((10f).pow(digits) - 1).toLong()
+    val rangeOfNumbers = lowerBoundary..upperBoundary
 
     var largestCandidate = 1L
 
     val evaluate = {
-            number: Long ->
-        if(number > largestCandidate && isPalindrome(number)) {
+        number: Long ->
+        if (number > largestCandidate && isPalindrome(number)) {
             largestCandidate = number
         }
     }
 
-    rangeOfNumbers.forEach {numberA ->
+    rangeOfNumbers.forEach { numberA ->
         rangeOfNumbers.forEach { numberB ->
             evaluate(numberA * numberB)
         }
