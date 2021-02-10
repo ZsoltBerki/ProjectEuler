@@ -108,3 +108,19 @@ fun getNumberFromPrimeFactors(primeFactors: Map<Int, Int>): Long {
 fun getSmallestEvenlyDivisible(numbers: List<Long>): Long {
     return getNumberFromPrimeFactors(getCombinedPrimeFactors(numbers))
 }
+
+/**
+ * Returns the nth prime number.
+ */
+fun findNthPrime(nth: Long): Long {
+    val primes = mutableListOf<Long>()
+    var currentNumber = 2L
+    while (primes.size < nth) {
+        val dividableBy = primes.find { prime -> currentNumber % prime == 0L }
+        if (dividableBy == null) {
+            primes.add(currentNumber)
+        }
+        currentNumber++
+    }
+    return primes.last()
+}

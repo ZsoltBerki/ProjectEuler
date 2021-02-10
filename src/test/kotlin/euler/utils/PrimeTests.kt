@@ -46,4 +46,15 @@ class PrimeTests {
         val result = getSmallestEvenlyDivisible(numbers)
         assertEquals(expected, result, "for numbers 1..10")
     }
+
+    @Test
+    @DisplayName("Test finding the nth prime number")
+    fun testFindNthPrime() {
+        assertEquals(2, findNthPrime(1), "Failed for the 1. prime")
+        assertEquals(3, findNthPrime(2), "Failed for the 2. prime")
+        assertEquals(5, findNthPrime(3), "Failed for the 3. prime")
+        assertEquals(7, findNthPrime(4), "Failed for the 4. prime")
+        assertEquals(11, findNthPrime(5), "Failed for the 5. prime")
+        assertEquals(13, findNthPrime(6), "Failed for the 6. prime")
+    }
 }

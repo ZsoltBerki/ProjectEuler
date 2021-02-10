@@ -2,6 +2,7 @@
 package euler
 
 import euler.utils.findLargestPalindrome
+import euler.utils.findNthPrime
 import euler.utils.generateFibonacci
 import euler.utils.getLargestPrimeFactor
 import euler.utils.getMultipliesOf
@@ -11,7 +12,7 @@ import euler.utils.getSumOfSquares
 
 fun main() {
     println("Hello, Euler!")
-    task6()
+    task7()
 }
 
 /**
@@ -87,4 +88,12 @@ fun task6() {
     val squareOfSums = getSquareOfSums(numbers)
     val result = (squareOfSums - sumOfSquares).toLong()
     println("The result is $result")
+}
+
+/**
+ * What is the 10 001st prime number?
+ */
+fun task7() {
+    println("Task 7")
+    println("The result is ${findNthPrime(10001)}")
 }
