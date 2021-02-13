@@ -17,3 +17,17 @@ fun <T> generateList(
     }
     return list.toList()
 }
+
+/**
+ * Goes through the list and applies the map function to a given window size.
+ * If the list is [1,2,3,4], the window size is 2 and the map function is sum(), the result is [3,5,7]
+ * If the window is bigger then the list, the map function will be executed for the whole list.
+ */
+fun <T, R> List<T>.windowMap(windowSize: Int, mapFunction: (window: List<T>) -> R): List<R> {
+    if (this.size <= windowSize) {
+        return listOf(mapFunction(this))
+    }
+
+    return (0..(this.size - windowSize))
+        .map { startIndex -> mapFunction(this.subList(startIndex, startIndex + windowSize)) }
+}
