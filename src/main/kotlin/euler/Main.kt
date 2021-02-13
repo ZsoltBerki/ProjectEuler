@@ -1,6 +1,7 @@
 @file:JvmName("Main")
 package euler
 
+import euler.utils.countNorthEastLatticePaths
 import euler.utils.findLargestPalindrome
 import euler.utils.findNthPrime
 import euler.utils.generateFibonacci
@@ -12,7 +13,7 @@ import euler.utils.getSumOfSquares
 
 fun main() {
     println("Hello, Euler!")
-    task7()
+    task15()
 }
 
 /**
@@ -96,4 +97,14 @@ fun task6() {
 fun task7() {
     println("Task 7")
     println("The result is ${findNthPrime(10001)}")
+}
+
+/**
+ * Starting in the top left corner of a 2×2 grid, and only being able to move to the right and down,
+ * there are exactly 6 routes to the bottom right corner.
+ * How many such routes are there through a 20×20 grid?
+ */
+fun task15() {
+    println("Task 15")
+    println("The result is ${countNorthEastLatticePaths(20)}")
 }
