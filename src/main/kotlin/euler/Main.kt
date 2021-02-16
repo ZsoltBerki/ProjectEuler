@@ -10,12 +10,13 @@ import euler.utils.getMultipliesOf
 import euler.utils.getSmallestEvenlyDivisible
 import euler.utils.getSquareOfSums
 import euler.utils.getSumOfSquares
+import euler.utils.isPythagoreanTriplet
 import euler.utils.toByteList
 import euler.utils.windowMap
 
 fun main() {
     println("Hello, Euler!")
-    task8()
+    task9()
 }
 
 /**
@@ -137,6 +138,23 @@ fun task8() {
     }.maxOrNull()
 
     println("The result is $result")
+}
+
+/**
+ * There exists exactly one Pythagorean triplet for which a + b + c = 1000.
+ * Find the product abc.
+ */
+fun task9(){
+    (1000 downTo 3).forEach { c: Int ->
+        ((c-1) downTo 2).forEach { b: Int ->
+            ((b-1) downTo 1).forEach { a: Int ->
+                if(isPythagoreanTriplet(a, b, c) && (a + b + c) == 1000) {
+                    println("The result is ${a * b * c}")
+                    return
+                }
+            }
+        }
+    }
 }
 
 /**
